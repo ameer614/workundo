@@ -1,0 +1,34 @@
+.errorlist{
+  list-style-type: none;
+}
+
+.body{
+  background-color: #FAFAFA;
+}
+
+.errorlist li{
+  color: red;
+}
+.insta{
+  font-family:Billabong;
+}
+
+.login-box{
+    background-color: #FFFFFF;
+    width:348px;
+    height:auto;
+    border:1px solid black;
+    margin-right: 35px;
+    margin-top: 15px;
+}
+.content{
+  padding: 15px;
+}
+
+.submit{
+  color: white;
+  width: 100%;
+  background-color:#0095F6;
+  border: 1px solid transparent;
+  font-family:"Segoe UI"
+}

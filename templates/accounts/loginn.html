@@ -1,0 +1,38 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container" id="container">
+	
+	<div style="height: auto;" class="form-container sign-in-container">
+        <form method="POST" >
+
+            {% csrf_token %}
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+
+			<input name='email' id="username" type="email" placeholder="Email" required="required" />
+			<input  type="password" class="form-control" name='password' id="password" placeholder="Password" required="required" />
+			<a href="#">Forgot your password?</a>
+			<button> <input type="submit" value="Sign In" style="background-color:#FF4B2B;height: fit-content; color: white; border: 2px solid white:"></button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button onclick="/accounts/register" class="ghost" id="signUp"><a href="/accounts/register/?message=1">Sign up</a></button>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+{% endblock %}

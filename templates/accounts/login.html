@@ -1,0 +1,40 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+{% load widget_tweaks %}
+
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form method="POST">
+      {% csrf_token %}
+			<h1>Sign up</h1>
+			
+			{% csrf_token %} {% for fields in form.visible_fields %}
+			
+			  {% render_field fields class="form-control" placeholder=fields.label %}
+			  <ul class="errorlist">
+				{% for err in fields.errors %}
+				<li>{{ err }}</li>
+				{% endfor %}
+			  </ul>
+			
+			{% endfor %}
+			<button> <input type="submit" value="Sign Up" style="background-color:#FF4B2B;height: fit-content; color: white; border: 2px solid white:"></button>
+		  </form>
+			
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+     
+			<div class="overlay-panel overlay-right">
+        <h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button onclick="/accounts/register" class="ghost" id="signUp"><a href="/accounts/login">Sign in</a></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
